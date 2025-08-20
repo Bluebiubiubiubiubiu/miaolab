@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MiaoLab - Personal Blog</title>
+    <meta name="description" content="A personal blog about technology, thoughts, and discoveries">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-brand">
+                    <a href="index.html" class="brand">MiaoLab</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link active">Home</a></li>
+                    <li><a href="research.html" class="nav-link">Research</a></li>
+                    <li><a href="publications.html" class="nav-link">Publications</a></li>
+                    <li><a href="people.html" class="nav-link">People</a></li>
+                    <li><a href="news.html" class="nav-link">News</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">Unravelling human development with stem cells...</h1>
+                    <p class="hero-subtitle">We study how cells build the human body</p>
+                    <div class="hero-scroll">
+                        <p>Scroll down to learn more</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="about">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-text">
+                        <p>We use human pluripotent stem cells to build organoids that recapitulate essential features of developmental processes. With these simplified <em>in vitro</em> models, we dive deep into mechanisms that integrate gene regulation, cellular dynamics, and tissue-level cues to precisely pattern the body plan. We in turn leverage on this knowledge to advance tissue and organ engineering.</p>
+                        
+                        <p>Currently we focus on somites and limb buds in the early embryo that respectively give rise to our spine and limbs. We combine live imaging, functional genomics, and cell engineering to uncover fundamental principles of multicellular patterning and morphogenesis. We aim to advance human developmental biology, understand congenital diseases, and promote regenerative medicine.</p>
+                    </div>
+                    <div class="about-image">
+                        <div class="somitoid-image">
+                            <p>somitoid image</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="join-team">
+            <div class="container">
+                <div class="join-content">
+                    <h2 class="section-title">JOIN OUR TEAM!!</h2>
+                    <p>We are excited to help you achieve your goals.</p>
+                    <p>Please contact: <a href="mailto:contact@miaolab.net">contact@miaolab.net</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section class="articles">
+            <div class="container">
+                <div class="articles-header">
+                    <h2 class="section-title">Latest News</h2>
+                    <div class="articles-filter">
+                        <button class="filter-btn active" data-category="all">All</button>
+                        <button class="filter-btn" data-category="research">Research</button>
+                        <button class="filter-btn" data-category="publications">Publications</button>
+                        <button class="filter-btn" data-category="team">Team</button>
+                    </div>
+                </div>
+
+                <div class="articles-grid" id="articlesGrid">
+                    <!-- Articles will be dynamically loaded here -->
+                </div>
+
+                <div class="articles-pagination">
+                    <button class="pagination-btn" id="prevPage" disabled>Previous</button>
+                    <span class="pagination-info" id="paginationInfo">Page 1 of 1</span>
+                    <button class="pagination-btn" id="nextPage">Next</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">MiaoLab</h3>
+                    <p class="footer-description">A personal space for sharing knowledge and experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Connect</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MiaoLab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 

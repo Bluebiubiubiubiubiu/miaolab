@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News - MiaoLab</title>
+    <meta name="description" content="Latest news and updates from MiaoLab">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <div class="nav-brand">
+                    <a href="index.html" class="brand">MiaoLab</a>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="research.html" class="nav-link">Research</a></li>
+                    <li><a href="publications.html" class="nav-link">Publications</a></li>
+                    <li><a href="people.html" class="nav-link">People</a></li>
+                    <li><a href="news.html" class="nav-link active">News</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <div class="nav-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="page-hero">
+            <div class="container">
+                <h1 class="page-title">News</h1>
+                <p class="page-subtitle">Latest updates and announcements from our lab</p>
+            </div>
+        </section>
+
+        <section class="news">
+            <div class="container">
+                <div class="news-header">
+                    <h2 class="section-title">Latest News</h2>
+                    <div class="news-filter">
+                        <button class="filter-btn active" data-category="all">All</button>
+                        <button class="filter-btn" data-category="publications">Publications</button>
+                        <button class="filter-btn" data-category="awards">Awards</button>
+                        <button class="filter-btn" data-category="events">Events</button>
+                        <button class="filter-btn" data-category="team">Team</button>
+                    </div>
+                </div>
+
+                <div class="news-grid" id="newsGrid">
+                    <div class="news-item" data-category="publications">
+                        <div class="news-date">January 15, 2024</div>
+                        <div class="news-content">
+                            <h3 class="news-title">New Publication in Nature Cell Biology</h3>
+                            <p class="news-excerpt">Our paper on "Human somite development and congenital disease modeling using stem cell-derived organoids" has been published in Nature Cell Biology. This work represents a significant advance in our understanding of human development.</p>
+                            <div class="news-links">
+                                <a href="#" class="news-link">Read More</a>
+                                <a href="#" class="news-link">View Paper</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="news-item" data-category="awards">
+                        <div class="news-date">January 10, 2024</div>
+                        <div class="news-content">
+                            <h3 class="news-title">Dr. Miao Receives Outstanding Research Award</h3>
+                            <p class="news-excerpt">Dr. Yiming Miao has been awarded the Outstanding Research Award from the Developmental Biology Society for contributions to stem cell research and organoid development.</p>
+                            <div class="news-links">
+                                <a href="#" class="news-link">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="news-item" data-category="team">
+                        <div class="news-date">January 5, 2024</div>
+                        <div class="news-content">
+                            <h3 class="news-title">Welcome New Team Members</h3>
+                            <p class="news-excerpt">We are excited to welcome Dr. Sarah Johnson and Emily Davis to our lab. Dr. Johnson joins as a postdoctoral fellow, and Emily joins as a graduate student.</p>
+                            <div class="news-links">
+                                <a href="#" class="news-link">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="news-item" data-category="events">
+                        <div class="news-date">December 20, 2023</div>
+                        <div class="news-content">
+                            <h3 class="news-title">Lab Presents at International Conference</h3>
+                            <p class="news-excerpt">Our lab presented three talks at the International Society for Stem Cell Research conference in Boston. The presentations covered our latest work on organoid development and cellular patterning.</p>
+                            <div class="news-links">
+                                <a href="#" class="news-link">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="news-item" data-category="publications">
+                        <div class="news-date">December 15, 2023</div>
+                        <div class="news-content">
+                            <h3 class="news-title">Review Article Published in Nature Reviews</h3>
+                            <p class="news-excerpt">Our comprehensive review on "Organoid models for studying human development and disease" has been published in Nature Reviews Genetics, highlighting the current state and future directions of the field.</p>
+                            <div class="news-links">
+                                <a href="#" class="news-link">Read More</a>
+                                <a href="#" class="news-link">View Paper</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="news-item" data-category="awards">
+                        <div class="news-date">December 10, 2023</div>
+                        <div class="news-content">
+                            <h3 class="news-title">Graduate Student Award</h3>
+                            <p class="news-excerpt">Alex Rodriguez received the Best Student Presentation Award at the annual department symposium for work on functional genomics in development.</p>
+                            <div class="news-links">
+                                <a href="#" class="news-link">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="news-item" data-category="events">
+                        <div class="news-date">November 30, 2023</div>
+                        <div class="news-content">
+                            <h3 class="news-title">Lab Hosts Visiting Scholar</h3>
+                            <p class="news-excerpt">We hosted Dr. Maria Garcia from the University of Barcelona for a two-week visit to collaborate on our limb bud organoid project.</p>
+                            <div class="news-links">
+                                <a href="#" class="news-link">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="news-item" data-category="team">
+                        <div class="news-date">November 15, 2023</div>
+                        <div class="news-content">
+                            <h3 class="news-title">Alumni Update</h3>
+                            <p class="news-excerpt">Former lab member Dr. Jennifer Smith has been appointed as Assistant Professor at the University of California. Congratulations, Jennifer!</p>
+                            <div class="news-links">
+                                <a href="#" class="news-link">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-pagination">
+                    <button class="pagination-btn" id="prevNewsPage" disabled>Previous</button>
+                    <span class="pagination-info" id="newsPaginationInfo">Page 1 of 1</span>
+                    <button class="pagination-btn" id="nextNewsPage">Next</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="upcoming-events">
+            <div class="container">
+                <h2 class="section-title">Upcoming Events</h2>
+                <div class="events-list">
+                    <div class="event-item">
+                        <div class="event-date">
+                            <span class="event-month">Feb</span>
+                            <span class="event-day">15</span>
+                        </div>
+                        <div class="event-content">
+                            <h3>Department Seminar</h3>
+                            <p>Dr. Miao will present "Advances in Human Organoid Development" at the weekly department seminar.</p>
+                            <p class="event-location">Building A, Room 201, 3:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="event-item">
+                        <div class="event-date">
+                            <span class="event-month">Mar</span>
+                            <span class="event-day">10</span>
+                        </div>
+                        <div class="event-content">
+                            <h3>International Conference</h3>
+                            <p>Lab members will present at the International Conference on Developmental Biology in San Francisco.</p>
+                            <p class="event-location">San Francisco, CA</p>
+                        </div>
+                    </div>
+
+                    <div class="event-item">
+                        <div class="event-date">
+                            <span class="event-month">Apr</span>
+                            <span class="event-day">5</span>
+                        </div>
+                        <div class="event-content">
+                            <h3>Lab Open House</h3>
+                            <p>Annual lab open house for prospective students and collaborators. Tour our facilities and learn about our research.</p>
+                            <p class="event-location">Building A, 2:00-5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">MiaoLab</h3>
+                    <p class="footer-description">A personal space for sharing knowledge and experiences.</p>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="research.html">Research</a></li>
+                        <li><a href="publications.html">Publications</a></li>
+                        <li><a href="people.html">People</a></li>
+                        <li><a href="news.html">News</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4 class="footer-subtitle">Connect</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">GitHub</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 MiaoLab. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html> 
