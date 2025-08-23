@@ -42,7 +42,7 @@ A modern, responsive personal blog website built with HTML, CSS, and JavaScript.
 ```
 miaolab/
 ├── index.html          # Homepage with lab overview and news
-├── research.html       # Research areas and methods
+
 ├── publications.html   # Research publications and papers
 ├── people.html         # Team members and alumni
 ├── news.html           # Lab news and upcoming events

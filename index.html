@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiaoLab - Personal Blog</title>
-    <meta name="description" content="A personal blog about technology, thoughts, and discoveries">
+    <title>Gong Lab - Developmental Biology and Stem Cell Research</title>
+    <meta name="description" content="Research lab focused on human development through stem cell biology and organoid engineering">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,11 +15,10 @@
         <div class="container">
             <nav class="nav">
                 <div class="nav-brand">
-                    <a href="index.html" class="brand">MiaoLab</a>
+                    <a href="index.html" class="brand">Gong Lab</a>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="research.html" class="nav-link">Research</a></li>
+                    <li><a href="#research-intro" class="nav-link">Research</a></li>
                     <li><a href="publications.html" class="nav-link">Publications</a></li>
                     <li><a href="people.html" class="nav-link">People</a></li>
                     <li><a href="news.html" class="nav-link">News</a></li>
@@ -36,64 +35,71 @@
 
     <main class="main">
         <section class="hero">
+            <div class="hero-video">
+                <video autoplay muted loop>
+                    <source src="assets/videos/main page movie_1.mov" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="hero-overlay"></div>
+                <div class="scale-indicator">20μm</div>
+            </div>
             <div class="container">
                 <div class="hero-content">
-                    <h1 class="hero-title">Unravelling human development with stem cells...</h1>
-                    <p class="hero-subtitle">We study how cells build the human body</p>
+                    <h1 class="hero-title">Cell Polarity and Dynamics Lab</h1>
                     <div class="hero-scroll">
                         <p>Scroll down to learn more</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="about">
-            <div class="container">
-                <div class="about-content">
-                    <div class="about-text">
-                        <p>We use human pluripotent stem cells to build organoids that recapitulate essential features of developmental processes. With these simplified <em>in vitro</em> models, we dive deep into mechanisms that integrate gene regulation, cellular dynamics, and tissue-level cues to precisely pattern the body plan. We in turn leverage on this knowledge to advance tissue and organ engineering.</p>
-                        
-                        <p>Currently we focus on somites and limb buds in the early embryo that respectively give rise to our spine and limbs. We combine live imaging, functional genomics, and cell engineering to uncover fundamental principles of multicellular patterning and morphogenesis. We aim to advance human developmental biology, understand congenital diseases, and promote regenerative medicine.</p>
-                    </div>
-                    <div class="about-image">
-                        <div class="somitoid-image">
-                            <p>somitoid image</p>
+                        <div class="scroll-arrow" id="scrollDownBtn">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7 10L12 15L17 10H7Z" fill="currentColor"/>
+                            </svg>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="join-team">
+        <section class="second-screen" id="second-screen">
+            <div class="second-screen-videos">
+                <div class="video-left">
+                    <video autoplay muted loop>
+                        <source src="assets/videos/main page movie_2a.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="video-right">
+                    <video autoplay muted loop>
+                        <source src="assets/videos/main page movie_2b.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
             <div class="container">
-                <div class="join-content">
-                    <h2 class="section-title">JOIN OUR TEAM!!</h2>
-                    <p>We are excited to help you achieve your goals.</p>
-                    <p>Please contact: <a href="mailto:contact@miaolab.net">contact@miaolab.net</a></p>
+                <div class="second-screen-title">
+                    <h2>Cell Polarity and Dynamics Lab</h2>
+                </div>
+                <div class="second-screen-scroll">
+                    <p>Scroll down to learn more</p>
+                    <div class="scroll-arrow" id="scrollDownBtn2">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7 10L12 15L17 10H7Z" fill="currentColor"/>
+                        </svg>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="articles">
+        <section class="research-intro" id="research-intro">
             <div class="container">
-                <div class="articles-header">
-                    <h2 class="section-title">Latest News</h2>
-                    <div class="articles-filter">
-                        <button class="filter-btn active" data-category="all">All</button>
-                        <button class="filter-btn" data-category="research">Research</button>
-                        <button class="filter-btn" data-category="publications">Publications</button>
-                        <button class="filter-btn" data-category="team">Team</button>
+                <h2 class="section-title">Our Research</h2>
+                <div class="research-intro-content">
+                    <div class="research-text">
+                        <p>We study how cell polarity controls dynamic processes that drive tissue development, homeostasis and regeneration. We dive deep into fundamental principles of polarity that integrate signaling pathways and organelle positioning. By harnessing this knowledge, we aim to engineer cells to guide development and combat diseases.</p>
+                        
+                        <p>Currently, we combine micropatterned cell system with organoid and mouse models to investigate a novel form of structural polarity, which we term ER-PM contacts-dependent polarity. Using quantitative imaging, synthetic biology, omics-based screening, and genetic perturbation tools, we are uncovering both the molecular basis and physiological roles of this newly recognized polarity program.</p>
                     </div>
-                </div>
-
-                <div class="articles-grid" id="articlesGrid">
-                    <!-- Articles will be dynamically loaded here -->
-                </div>
-
-                <div class="articles-pagination">
-                    <button class="pagination-btn" id="prevPage" disabled>Previous</button>
-                    <span class="pagination-info" id="paginationInfo">Page 1 of 1</span>
-                    <button class="pagination-btn" id="nextPage">Next</button>
+                    <div class="research-image">
+                        <img src="assets/images/research.png" alt="Research Overview" />
+                    </div>
                 </div>
             </div>
         </section>
@@ -102,29 +108,15 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-title">MiaoLab</h3>
-                    <p class="footer-description">A personal space for sharing knowledge and experiences.</p>
-                </div>
-                <div class="footer-section">
-                    <h4 class="footer-subtitle">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4 class="footer-subtitle">Connect</h4>
-                    <div class="social-links">
-                        <a href="#" class="social-link">GitHub</a>
-                        <a href="#" class="social-link">Twitter</a>
-                        <a href="#" class="social-link">LinkedIn</a>
-                    </div>
-                </div>
+                            <div class="footer-logo">
+                <img src="assets/images/ucsf-logo.png" alt="UCSF Logo" />
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 MiaoLab. All rights reserved.</p>
+                <div class="footer-contact">
+                    <h3>JOIN OUR TEAM!</h3>
+                    <p>Your goals fuel our dream.</p>
+                    <p>Please contact:</p>
+                    <p><a href="mailto:bog4001@med.cornell.edu">bog4001@med.cornell.edu</a></p>
+                </div>
             </div>
         </div>
     </footer>

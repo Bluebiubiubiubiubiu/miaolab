@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>People - MiaoLab</title>
-    <meta name="description" content="Meet the team members of MiaoLab">
+    <title>People - Gong Lab</title>
+    <meta name="description" content="Meet the team members of Gong Lab">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,11 +15,10 @@
         <div class="container">
             <nav class="nav">
                 <div class="nav-brand">
-                    <a href="index.html" class="brand">MiaoLab</a>
+                    <a href="index.html" class="brand">Gong Lab</a>
                 </div>
                 <ul class="nav-menu">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="research.html" class="nav-link">Research</a></li>
+                    <li><a href="index.html#research-intro" class="nav-link">Research</a></li>
                     <li><a href="publications.html" class="nav-link">Publications</a></li>
                     <li><a href="people.html" class="nav-link active">People</a></li>
                     <li><a href="news.html" class="nav-link">News</a></li>
@@ -35,10 +34,10 @@
     </header>
 
     <main class="main">
-        <section class="page-hero">
+        <section class="people-header">
             <div class="container">
-                <h1 class="page-title">People</h1>
-                <p class="page-subtitle">Meet our research team</p>
+                <h1 class="people-main-title">People</h1>
+                <p class="people-main-subtitle">Meet our research team</p>
             </div>
         </section>
 
@@ -47,163 +46,51 @@
                 <h2 class="section-title">Principal Investigator</h2>
                 <div class="pi-card">
                     <div class="pi-image">
-                        <div class="placeholder-image">PI Photo</div>
+                        <img src="assets/images/portrait.png" alt="Bo Gong, Ph.D." class="pi-photo">
                     </div>
                     <div class="pi-content">
-                        <h3>Dr. Yiming Miao</h3>
-                        <p class="pi-title">Principal Investigator</p>
-                        <p class="pi-description">Dr. Miao leads our research efforts in human developmental biology and stem cell engineering. With over 15 years of experience in the field, Dr. Miao has published extensively on organoid development and cellular patterning mechanisms.</p>
+                        <h3>Bo Gong, Ph.D.</h3>
+                        <p class="pi-title">Assistant Professor, Department of Cell and Tissue Biology</p>
+                        <p class="pi-title">University of California San Francisco</p>
                         <div class="pi-contact">
-                            <p><strong>Email:</strong> <a href="mailto:ymiao@example.edu">ymiao@example.edu</a></p>
-                            <p><strong>Office:</strong> Building A, Room 301</p>
+                            <p><strong>Email:</strong> <a href="mailto:bog4001@med.cornell.edu">bog4001@med.cornell.edu</a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="team-members">
+        <section class="lab-members">
             <div class="container">
-                <h2 class="section-title">Current Team Members</h2>
-                <div class="team-grid">
-                    <div class="team-card">
-                        <div class="team-image">
-                            <div class="placeholder-image">Member Photo</div>
-                        </div>
-                        <div class="team-content">
-                            <h3>Dr. Sarah Johnson</h3>
-                            <p class="team-role">Postdoctoral Fellow</p>
-                            <p class="team-research">Research focus: Somite development and patterning</p>
+                <h2 class="section-title">Lab Members</h2>
+                <div class="recruitment-card">
+                    <div class="recruitment-image">
+                        <div class="recruitment-placeholder" onclick="sendApplication()">
+                            <span class="recruitment-text">Click here to apply</span>
                         </div>
                     </div>
-
-                    <div class="team-card">
-                        <div class="team-image">
-                            <div class="placeholder-image">Member Photo</div>
-                        </div>
-                        <div class="team-content">
-                            <h3>Dr. Michael Chen</h3>
-                            <p class="team-role">Postdoctoral Fellow</p>
-                            <p class="team-research">Research focus: Limb bud organoid development</p>
-                        </div>
-                    </div>
-
-                    <div class="team-card">
-                        <div class="team-image">
-                            <div class="placeholder-image">Member Photo</div>
-                        </div>
-                        <div class="team-content">
-                            <h3>Emily Davis</h3>
-                            <p class="team-role">Graduate Student</p>
-                            <p class="team-research">Research focus: Live imaging of organoid development</p>
-                        </div>
-                    </div>
-
-                    <div class="team-card">
-                        <div class="team-image">
-                            <div class="placeholder-image">Member Photo</div>
-                        </div>
-                        <div class="team-content">
-                            <h3>Alex Rodriguez</h3>
-                            <p class="team-role">Graduate Student</p>
-                            <p class="team-research">Research focus: Functional genomics in development</p>
-                        </div>
-                    </div>
-
-                    <div class="team-card">
-                        <div class="team-image">
-                            <div class="placeholder-image">Member Photo</div>
-                        </div>
-                        <div class="team-content">
-                            <h3>Lisa Wang</h3>
-                            <p class="team-role">Research Assistant</p>
-                            <p class="team-research">Research focus: Cell culture and organoid maintenance</p>
-                        </div>
-                    </div>
-
-                    <div class="team-card">
-                        <div class="team-image">
-                            <div class="placeholder-image">Member Photo</div>
-                        </div>
-                        <div class="team-content">
-                            <h3>David Kim</h3>
-                            <p class="team-role">Research Assistant</p>
-                            <p class="team-research">Research focus: Data analysis and computational modeling</p>
-                        </div>
+                    <div class="recruitment-content">
+                        <h3>You?</h3>
+                        <p class="recruitment-subtitle">Come work with us!</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="alumni">
-            <div class="container">
-                <h2 class="section-title">Alumni</h2>
-                <div class="alumni-list">
-                    <div class="alumni-item">
-                        <h3>Dr. Jennifer Smith</h3>
-                        <p class="alumni-role">Former Postdoctoral Fellow (2020-2023)</p>
-                        <p class="alumni-current">Current: Assistant Professor, University of California</p>
-                    </div>
-                    <div class="alumni-item">
-                        <h3>Dr. Robert Wilson</h3>
-                        <p class="alumni-role">Former Graduate Student (2018-2023)</p>
-                        <p class="alumni-current">Current: Research Scientist, Biotech Company</p>
-                    </div>
-                    <div class="alumni-item">
-                        <h3>Dr. Maria Garcia</h3>
-                        <p class="alumni-role">Former Postdoctoral Fellow (2019-2022)</p>
-                        <p class="alumni-current">Current: Senior Scientist, Research Institute</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="join-team-section">
-            <div class="container">
-                <div class="join-content">
-                    <h2 class="section-title">Join Our Team</h2>
-                    <p>We are always looking for talented and motivated individuals to join our research team. We offer opportunities for:</p>
-                    <ul class="opportunities-list">
-                        <li>Postdoctoral positions</li>
-                        <li>Graduate student positions</li>
-                        <li>Research assistant positions</li>
-                        <li>Summer internships</li>
-                    </ul>
-                    <p>If you are interested in joining our lab, please contact Dr. Miao at <a href="mailto:ymiao@example.edu">ymiao@example.edu</a> with your CV and research interests.</p>
-                </div>
-            </div>
-        </section>
     </main>
 
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-section">
-                    <h3 class="footer-title">MiaoLab</h3>
-                    <p class="footer-description">A personal space for sharing knowledge and experiences.</p>
-                </div>
-                <div class="footer-section">
-                    <h4 class="footer-subtitle">Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="research.html">Research</a></li>
-                        <li><a href="publications.html">Publications</a></li>
-                        <li><a href="people.html">People</a></li>
-                        <li><a href="news.html">News</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4 class="footer-subtitle">Connect</h4>
-                    <div class="social-links">
-                        <a href="#" class="social-link">GitHub</a>
-                        <a href="#" class="social-link">Twitter</a>
-                        <a href="#" class="social-link">LinkedIn</a>
-                    </div>
-                </div>
+                            <div class="footer-logo">
+                <img src="assets/images/ucsf-logo.png" alt="UCSF Logo" />
             </div>
-            <div class="footer-bottom">
-                <p>&copy; 2024 MiaoLab. All rights reserved.</p>
+                <div class="footer-contact">
+                    <h3>JOIN OUR TEAM!</h3>
+                    <p>Your goals fuel our dream.</p>
+                    <p>Please contact:</p>
+                    <p><a href="mailto:bog4001@med.cornell.edu">bog4001@med.cornell.edu</a></p>
+                </div>
             </div>
         </div>
     </footer>
