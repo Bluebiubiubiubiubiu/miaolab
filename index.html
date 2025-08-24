@@ -46,14 +46,24 @@
     </header>
 
     <main class="main">
-        <section class="hero">
+        <section class="hero" id="hero-section">
             <div class="hero-video">
-                <video autoplay muted loop>
+                <video id="video1" muted style="display: block;">
                     <source src="assets/videos/main page movie_1.mov" type="video/mp4">
                     Your browser does not support the video tag.
                 </video>
+                <div id="video-dual-container" style="display: none;">
+                    <video id="video2a" muted>
+                        <source src="assets/videos/main page movie_2a.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                    <video id="video2b" muted>
+                        <source src="assets/videos/main page movie_2b.mov" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
                 <div class="hero-overlay"></div>
-                <div class="scale-indicator">20μm</div>
+                <div class="scale-indicator" id="scale-indicator">20μm</div>
             </div>
             <div class="container">
                 <div class="hero-content">
@@ -65,36 +75,6 @@
                                 <path d="M7 10L12 15L17 10H7Z" fill="currentColor"/>
                             </svg>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="second-screen" id="second-screen">
-            <div class="second-screen-videos">
-                <div class="video-left">
-                    <video autoplay muted loop>
-                        <source src="assets/videos/main page movie_2a.mov" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-                <div class="video-right">
-                    <video autoplay muted loop>
-                        <source src="assets/videos/main page movie_2b.mov" type="video/mp4">
-                        Your browser does not support the video tag.
-                    </video>
-                </div>
-            </div>
-            <div class="container">
-                <div class="second-screen-title">
-                    <h2>Cell Polarity and Dynamics Lab</h2>
-                </div>
-                <div class="second-screen-scroll">
-                    <p>Scroll down to learn more</p>
-                    <div class="scroll-arrow" id="scrollDownBtn2">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7 10L12 15L17 10H7Z" fill="currentColor"/>
-                        </svg>
                     </div>
                 </div>
             </div>

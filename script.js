@@ -1,6 +1,117 @@
+// Video sequence control for hero section
+class VideoSequencePlayer {
+    constructor() {
+        this.video1 = document.getElementById('video1');
+        this.video2a = document.getElementById('video2a');
+        this.video2b = document.getElementById('video2b');
+        this.dualContainer = document.getElementById('video-dual-container');
+        this.scaleIndicator = document.getElementById('scale-indicator');
+        this.heroOverlay = document.querySelector('.hero-overlay');
+        this.currentPhase = 0; // 0: movie1, 1: movie2a+2b
+        this.isInitialized = false;
+        this.dualVideosEnded = { video2a: false, video2b: false };
+        
+        this.init();
+    }
+    
+    init() {
+        if (!this.video1 || !this.video2a || !this.video2b || !this.dualContainer) {
+            console.log('Videos not found, skipping video sequence initialization');
+            return;
+        }
+        
+        // Set up video event listeners
+        this.video1.addEventListener('ended', () => this.playDualVideos());
+        this.video1.addEventListener('loadeddata', () => {
+            if (!this.isInitialized) {
+                this.startSequence();
+                this.isInitialized = true;
+            }
+        });
+        
+        // Set up dual video event listeners
+        this.video2a.addEventListener('ended', () => this.onDualVideoEnded('video2a'));
+        this.video2b.addEventListener('ended', () => this.onDualVideoEnded('video2b'));
+        
+        // Start playing the first video if it's already loaded
+        if (this.video1.readyState >= 3) {
+            this.startSequence();
+            this.isInitialized = true;
+        }
+    }
+    
+    startSequence() {
+        this.currentPhase = 0;
+        this.playMovie1();
+    }
+    
+    playMovie1() {
+        // Hide dual container and show movie1
+        this.dualContainer.style.display = 'none';
+        this.video1.style.display = 'block';
+        
+        // Reset and play movie1
+        this.video1.currentTime = 0;
+        this.video1.play().catch(e => console.log('Video1 play failed:', e));
+        
+        // Show scale indicator for movie1
+        if (this.scaleIndicator) {
+            this.scaleIndicator.style.opacity = '1';
+        }
+        
+        // Adjust overlay opacity for movie1
+        if (this.heroOverlay) {
+            this.heroOverlay.style.opacity = '1';
+        }
+        
+        this.currentPhase = 0;
+    }
+    
+    playDualVideos() {
+        // Hide movie1 and show dual container
+        this.video1.style.display = 'none';
+        this.dualContainer.style.display = 'grid';
+        
+        // Reset dual videos ended tracking
+        this.dualVideosEnded = { video2a: false, video2b: false };
+        
+        // Reset and play both videos
+        this.video2a.currentTime = 0;
+        this.video2b.currentTime = 0;
+        
+        this.video2a.play().catch(e => console.log('Video2a play failed:', e));
+        this.video2b.play().catch(e => console.log('Video2b play failed:', e));
+        
+        // Hide scale indicator for dual videos
+        if (this.scaleIndicator) {
+            this.scaleIndicator.style.opacity = '0';
+        }
+        
+        // Reduce overlay opacity for dual videos to show background colors
+        if (this.heroOverlay) {
+            this.heroOverlay.style.opacity = '0.3';
+        }
+        
+        this.currentPhase = 1;
+    }
+    
+    onDualVideoEnded(videoId) {
+        this.dualVideosEnded[videoId] = true;
+        
+        // Check if both dual videos have ended
+        if (this.dualVideosEnded.video2a && this.dualVideosEnded.video2b) {
+            // Both dual videos finished, restart with movie1
+            setTimeout(() => this.playMovie1(), 100); // Small delay for smooth transition
+        }
+    }
+}
+
 // Smooth scroll functionality for scroll down buttons
 window.addEventListener('load', function() {
     console.log('Scroll functionality loading...');
+    
+    // Initialize video sequence player
+    new VideoSequencePlayer();
     
     // First screen scroll down button
     const scrollDownBtn = document.getElementById('scrollDownBtn');
@@ -9,24 +120,6 @@ window.addEventListener('load', function() {
         scrollDownBtn.addEventListener('click', function(e) {
             e.preventDefault();
             console.log('First button clicked');
-            const targetSection = document.getElementById('second-screen');
-            console.log('Target section:', targetSection);
-            if (targetSection) {
-                window.scrollTo({
-                    top: targetSection.offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    }
-
-    // Second screen scroll down button
-    const scrollDownBtn2 = document.getElementById('scrollDownBtn2');
-    console.log('Second button found:', scrollDownBtn2);
-    if (scrollDownBtn2) {
-        scrollDownBtn2.addEventListener('click', function(e) {
-            e.preventDefault();
-            console.log('Second button clicked');
             const targetSection = document.getElementById('research-intro');
             console.log('Target section:', targetSection);
             if (targetSection) {
@@ -103,13 +196,9 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-// Function to send application email
+// Function to navigate to UCSF graduate programs page
 function sendApplication() {
-    const subject = encodeURIComponent('Application to Join Gong Lab');
-    const body = encodeURIComponent('Dear Dr. Gong,\n\nI am interested in joining your research team at Gong Lab. Please find my CV and research interests attached.\n\nBest regards,\n[Your Name]');
-    const mailtoLink = `mailto:bog4001@med.cornell.edu?subject=${subject}&body=${body}`;
-    
-    window.open(mailtoLink, '_blank');
+    window.open('https://ctb.ucsf.edu/graduate-programs', '_blank');
 }
 
 // Search functionality
