@@ -472,7 +472,7 @@ a:hover {
 /* Research Introduction Section */
 .research-intro {
     padding: 5rem 0;
-    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+    background: #000000;
     position: relative;
 }
 
@@ -491,6 +491,10 @@ a:hover {
     max-width: 1400px;
 }
 
+.research-intro .section-title {
+    color: #ffffff;
+}
+
 .research-intro-content {
     display: grid;
     grid-template-columns: 4fr 1fr;
@@ -501,7 +505,7 @@ a:hover {
 .research-text p {
     font-size: 1.125rem;
     line-height: 1.8;
-    color: var(--text-secondary);
+    color: #ffffff;
     margin-bottom: 1.2rem;
 }
 
@@ -509,16 +513,21 @@ a:hover {
     margin-bottom: 0;
 }
 
-.research-image {
+.research-intro .research-image {
     text-align: center;
+    background: transparent;
+    height: auto;
+    display: block;
 }
 
-.research-image img {
+.research-intro .research-image img {
     width: 100%;
+    max-width: 100%;
     height: auto;
     border-radius: var(--radius-lg);
     box-shadow: var(--shadow-lg);
     object-fit: contain;
+    box-sizing: border-box;
 }
 
 /* About Section */
@@ -1139,6 +1148,30 @@ a:hover {
         gap: 1.5rem;
     }
 
+    .research-intro .research-image {
+        order: 2; /* 将图片放在文字后面 */
+        margin-top: 1rem;
+        text-align: center !important;
+        overflow: hidden;
+        padding: 0 1rem;
+        background: transparent !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    .research-intro .research-image img {
+        max-width: 80% !important;
+        height: auto !important;
+        margin: 0 auto !important;
+        display: block !important;
+        width: auto !important;
+        object-fit: contain !important;
+    }
+
+    .research-text {
+        order: 1; /* 确保文字在前面 */
+    }
+
     .research-text p {
         font-size: 1rem;
     }
@@ -1238,6 +1271,19 @@ a:hover {
 
     .research-intro .container {
         padding: 0 1rem;
+    }
+
+    .research-intro .research-image {
+        background: transparent !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    .research-intro .research-image img {
+        max-width: 90% !important;
+        margin: 1rem auto !important;
+        width: auto !important;
+        display: block !important;
     }
 
     .research-text p {
@@ -1394,7 +1440,7 @@ a:focus {
     border-color: var(--border-accent);
 }
 
-.research-image {
+.research-card .research-image {
     height: 200px;
     background-color: var(--bg-tertiary);
     display: flex;
