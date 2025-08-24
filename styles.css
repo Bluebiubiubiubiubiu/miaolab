@@ -1126,10 +1126,10 @@ a:hover {
         max-width: 100%;
     }
 
-    /* Mobile layout for dual videos */
+    /* Mobile layout for dual videos - keep horizontal layout */
     #video-dual-container {
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
     }
 
 
