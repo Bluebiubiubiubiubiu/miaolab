@@ -2,7 +2,7 @@
 
 A modern, responsive personal blog website built with HTML, CSS, and JavaScript. This project provides a clean, professional platform for sharing articles, thoughts, and tutorials.
 
-## Features
+## Features 11
 
 ### 🎨 Modern Design
 - Clean, minimalist design with excellent typography
