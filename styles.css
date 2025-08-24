@@ -412,6 +412,20 @@ a:hover {
     font-weight: 700;
     margin-bottom: 1.5rem;
     color: white;
+    transition: text-shadow 0.5s ease;
+}
+
+.hero-title.text-stroke {
+    text-shadow: 
+        -1px -1px 0 #999,
+        1px -1px 0 #999,
+        -1px 1px 0 #999,
+        1px 1px 0 #999,
+        -1px 0 0 #999,
+        1px 0 0 #999,
+        0 -1px 0 #999,
+        0 1px 0 #999,
+        0 0 3px rgba(153, 153, 153, 0.6);
 }
 
 .hero-subtitle {
@@ -431,7 +445,10 @@ a:hover {
     color: rgba(255, 255, 255, 0.9);
     font-size: 1rem;
     margin-bottom: 0;
+    transition: text-shadow 0.5s ease;
 }
+
+/* 移除hero-scroll的text-stroke效果，不需要边框 */
 
 .hero-scroll .scroll-arrow {
     color: white;
