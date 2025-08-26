@@ -8,6 +8,7 @@ class VideoSequencePlayer {
         this.scaleIndicator = document.getElementById('scale-indicator');
         this.heroOverlay = document.querySelector('.hero-overlay');
         this.heroTitle = document.querySelector('.hero-title');
+        this.heroContent = document.querySelector('.hero-content');
         this.currentPhase = 0; // 0: movie1, 1: movie2a+2b
         this.isInitialized = false;
         this.dualVideosEnded = { video2a: false, video2b: false };
@@ -65,11 +66,6 @@ class VideoSequencePlayer {
             this.heroOverlay.style.opacity = '1';
         }
         
-        // Remove text stroke for movie1 (dark background)
-        if (this.heroTitle) {
-            this.heroTitle.classList.remove('text-stroke');
-        }
-        
         this.currentPhase = 0;
     }
     
@@ -96,11 +92,6 @@ class VideoSequencePlayer {
         // Reduce overlay opacity for dual videos to show background colors
         if (this.heroOverlay) {
             this.heroOverlay.style.opacity = '0.3';
-        }
-        
-        // Add text stroke for dual videos (white background)
-        if (this.heroTitle) {
-            this.heroTitle.classList.add('text-stroke');
         }
         
         this.currentPhase = 1;
