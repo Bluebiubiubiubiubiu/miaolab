@@ -520,18 +520,26 @@ a:hover {
 
 .research-intro-content {
     display: flex;
+    display: -webkit-flex; /* Safari */
     flex-direction: row;
+    -webkit-flex-direction: row; /* Safari */
     gap: 2rem;
     align-items: center;
+    -webkit-align-items: center; /* Safari */
+    justify-content: space-between;
+    -webkit-justify-content: space-between; /* Safari */
 }
 
 .research-text {
     flex: 1;
+    -webkit-flex: 1; /* Safari */
     min-width: 0;
+    max-width: 60%; /* 限制文本宽度确保图片有足够空间 */
+    text-align: left; /* 确保文字左对齐 */
 }
 
 .research-text p {
-    font-size: 1.125rem;
+    font-size: 1.25rem;
     line-height: 1.8;
     color: #ffffff;
     margin-bottom: 1.2rem;
@@ -543,10 +551,14 @@ a:hover {
 
 .research-intro .research-image {
     flex-shrink: 0;
+    -webkit-flex-shrink: 0; /* Safari */
     text-align: center;
     background: transparent;
     height: auto;
     display: block;
+    width: auto;
+    max-width: 40%; /* 限制图片容器宽度 */
+    min-width: 300px; /* 确保图片有最小宽度 */
 }
 
 .research-intro .research-image img {
@@ -561,10 +573,18 @@ a:hover {
 
 .research-images-dual {
     display: flex;
+    display: -webkit-flex; /* Safari */
     gap: 0;
-    align-items: center;
+    align-items: flex-start; /* 图片顶部对齐，保持原始比例 */
+    -webkit-align-items: flex-start; /* Safari */
     justify-content: center;
-    width: auto;
+    -webkit-justify-content: center; /* Safari */
+    flex-wrap: nowrap; /* 确保不换行 */
+    -webkit-flex-wrap: nowrap; /* Safari */
+    width: 100%;
+    max-width: 100%;
+    height: auto; /* 让容器高度自适应内容 */
+    min-height: 200px; /* 最小高度保证 */
     padding: 0;
     margin: 0;
     border-radius: var(--radius-lg);
@@ -573,6 +593,12 @@ a:hover {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     font-size: 0;
     line-height: 0;
+    /* Safari图片显示修复 */
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    /* 图片容器缩放修复 */
+    contain: layout style;
+    position: relative;
 }
 
 .research-images-dual:hover {
@@ -581,19 +607,44 @@ a:hover {
 }
 
 .research-images-dual img {
-    width: auto;
+    /* 保留边框的并排显示，保持原始比例 */
+    flex: 1;
+    -webkit-flex: 1; /* Safari */
+    width: calc(50% - 1px); /* 减去边框间隔 */
     height: auto;
     max-height: 400px;
-    border: none;
+    border: 1px solid white;
     border-radius: 0;
     box-shadow: none;
-    object-fit: contain;
+    object-fit: contain; /* 保持原始比例，完整显示 */
+    -webkit-object-fit: contain; /* Safari */
+    -o-object-fit: contain; /* Opera */
     object-position: center;
+    -webkit-object-position: center; /* Safari */
+    -o-object-position: center; /* Opera */
     box-sizing: border-box;
     display: block;
     margin: 0;
     padding: 0;
     outline: none;
+    /* 图片比例修复 */
+    -webkit-transform: translateZ(0);
+    image-rendering: auto;
+    flex-shrink: 0;
+    -webkit-flex-shrink: 0;
+    vertical-align: top;
+}
+
+/* 第一张图片只保留左、右、下边框 */
+.research-images-dual img:first-child {
+    border-right: none;
+    margin-right: 1px; /* 边框间隔 */
+}
+
+/* 第二张图片只保留左、右、下边框 */
+.research-images-dual img:last-child {
+    border-left: none;
+    margin-left: 1px; /* 边框间隔 */
 }
 
 /* 图片加载状态 */
@@ -1137,12 +1188,27 @@ a:hover {
     }
     
     .research-images-dual img {
-        width: auto;
+        flex: 1;
+        -webkit-flex: 1;
+        width: calc(50% - 1px);
         height: auto;
         max-height: 300px;
-        border: none;
+        border: 1px solid white;
+        object-fit: contain;
+        -webkit-object-fit: contain;
         margin: 0;
         padding: 0;
+        vertical-align: top;
+    }
+    
+    .research-images-dual img:first-child {
+        border-right: none;
+        margin-right: 1px;
+    }
+    
+    .research-images-dual img:last-child {
+        border-left: none;
+        margin-left: 1px;
     }
     
     .research-text {
@@ -1288,7 +1354,7 @@ a:hover {
     .research-intro-content {
         flex-direction: column;
         gap: 1.5rem;
-        align-items: center;
+        align-items: flex-start; /* 左对齐 */
     }
 
     .research-intro .research-image {
@@ -1325,23 +1391,39 @@ a:hover {
     }
     
     .research-images-dual img {
-        width: auto !important;
+        flex: 1 !important;
+        -webkit-flex: 1 !important;
+        width: calc(50% - 1px) !important;
         height: auto !important;
         max-height: 250px !important;
-        border: none !important;
+        border: 1px solid white !important;
         margin: 0 !important;
         padding: 0 !important;
         display: block !important;
         border-radius: 0 !important;
         object-fit: contain !important;
+        -webkit-object-fit: contain !important;
+        vertical-align: top !important;
+    }
+    
+    .research-images-dual img:first-child {
+        border-right: none !important;
+        margin-right: 1px !important;
+    }
+    
+    .research-images-dual img:last-child {
+        border-left: none !important;
+        margin-left: 1px !important;
     }
 
     .research-text {
         order: 1; /* 确保文字在前面 */
+        text-align: left !important; /* 移动端强制左对齐 */
+        max-width: 100% !important; /* 移动端占满宽度 */
     }
 
     .research-text p {
-        font-size: 1rem;
+        font-size: 1.125rem;
     }
 
     .articles-grid {
@@ -1476,19 +1558,38 @@ a:hover {
     }
     
     .research-images-dual img {
-        width: auto !important;
+        flex: 1 !important;
+        -webkit-flex: 1 !important;
+        width: calc(50% - 1px) !important;
         height: auto !important;
         max-height: 200px !important;
-        border: none !important;
+        border: 1px solid white !important;
         margin: 0 !important;
         padding: 0 !important;
         display: block !important;
         border-radius: 0 !important;
         object-fit: contain !important;
+        -webkit-object-fit: contain !important;
+        vertical-align: top !important;
+    }
+    
+    .research-images-dual img:first-child {
+        border-right: none !important;
+        margin-right: 1px !important;
+    }
+    
+    .research-images-dual img:last-child {
+        border-left: none !important;
+        margin-left: 1px !important;
     }
 
+    .research-text {
+        text-align: left !important; /* 小屏设备强制左对齐 */
+        max-width: 100% !important; /* 小屏设备占满宽度 */
+    }
+    
     .research-text p {
-        font-size: 0.95rem;
+        font-size: 1rem;
         line-height: 1.7;
     }
 }
@@ -1524,6 +1625,65 @@ button:focus,
 a:focus {
     outline: 2px solid var(--primary-color);
     outline-offset: 2px;
+}
+
+/* Safari浏览器兼容性修复 */
+@media not all and (min-resolution:.001dpcm) { 
+    @supports (-webkit-appearance:none) {
+        .research-intro-content {
+            display: -webkit-flex !important;
+            -webkit-flex-direction: row !important;
+            -webkit-align-items: center !important;
+            -webkit-justify-content: space-between !important;
+        }
+        
+        .research-text {
+            -webkit-flex: 1 !important;
+            max-width: 55% !important;
+        }
+        
+        .research-intro .research-image {
+            -webkit-flex-shrink: 0 !important;
+            max-width: 45% !important;
+            min-width: 280px !important;
+        }
+        
+        .research-images-dual {
+            display: -webkit-flex !important;
+            -webkit-align-items: center !important;
+            -webkit-justify-content: center !important;
+            -webkit-transform: translateZ(0) !important;
+            width: 100% !important;
+            height: auto !important;
+            max-height: 400px !important;
+            position: relative !important;
+            overflow: hidden !important;
+        }
+        
+        .research-images-dual img {
+            flex: 1 !important;
+            -webkit-flex: 1 !important;
+            -webkit-flex-shrink: 0 !important;
+            width: calc(50% - 1px) !important;
+            height: auto !important;
+            max-height: 400px !important;
+            border: 1px solid white !important;
+            -webkit-transform: translateZ(0) !important;
+            object-fit: contain !important;
+            -webkit-object-fit: contain !important;
+            vertical-align: top !important;
+        }
+        
+        .research-images-dual img:first-child {
+            border-right: none !important;
+            margin-right: 1px !important;
+        }
+        
+        .research-images-dual img:last-child {
+            border-left: none !important;
+            margin-left: 1px !important;
+        }
+    }
 }
 
 /* Page Hero */

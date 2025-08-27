@@ -441,4 +441,84 @@ class SearchEngine {
 }
 
 // Initialize search engine
-const searchEngine = new SearchEngine(); 
+const searchEngine = new SearchEngine();
+
+// 图片布局修复 - 适用于所有浏览器
+class ImageLayoutFix {
+    constructor() {
+        this.init();
+    }
+    
+    init() {
+        // 等待DOM加载完成
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', () => this.fixImages());
+        } else {
+            this.fixImages();
+        }
+        
+        // 监听窗口大小变化
+        window.addEventListener('resize', () => this.fixImages());
+        
+        // 监听图片加载完成
+        this.observeImageLoading();
+    }
+    
+    observeImageLoading() {
+        const researchImages = document.querySelectorAll('.research-images-dual img');
+        researchImages.forEach(img => {
+            if (!img.complete) {
+                img.addEventListener('load', () => this.fixImages());
+            }
+        });
+    }
+    
+    fixImages() {
+        const containers = document.querySelectorAll('.research-images-dual');
+        
+        containers.forEach(container => {
+            this.adjustContainer(container);
+        });
+    }
+    
+    adjustContainer(container) {
+        const images = container.querySelectorAll('img');
+        if (images.length !== 2) return;
+        
+        const maxHeight = window.innerWidth <= 480 ? 200 : 
+                         window.innerWidth <= 768 ? 250 : 
+                         window.innerWidth <= 1024 ? 300 : 400;
+        
+        // 让容器高度自适应，不强制固定高度
+        container.style.height = 'auto';
+        container.style.minHeight = `${Math.min(maxHeight, 200)}px`;
+        container.style.display = 'flex';
+        container.style.alignItems = 'flex-start'; // 顶部对齐，保持原始比例
+        
+        // 设置每张图片的尺寸，保持原始比例
+        images.forEach((img, index) => {
+            img.style.flex = '1';
+            img.style.width = 'calc(50% - 1px)';
+            img.style.height = 'auto'; // 让高度自适应，保持比例
+            img.style.maxHeight = `${maxHeight}px`;
+            img.style.objectFit = 'contain'; // 保持原始比例，完整显示
+            img.style.objectPosition = 'center';
+            img.style.display = 'block';
+            img.style.verticalAlign = 'top';
+            img.style.border = '1px solid white';
+            
+            // 保留边框但留出间隔
+            if (index === 0) {
+                img.style.borderRight = 'none';
+                img.style.marginRight = '1px';
+            }
+            if (index === 1) {
+                img.style.borderLeft = 'none';
+                img.style.marginLeft = '1px';
+            }
+        });
+    }
+}
+
+// 初始化图片布局修复
+new ImageLayoutFix(); 
