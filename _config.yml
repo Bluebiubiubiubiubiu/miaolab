@@ -1,0 +1,26 @@
+# GitHub Pages configuration
+# This ensures that static HTML files are served correctly
+
+# Exclude files and directories from processing
+exclude:
+  - README.md
+  - .htaccess
+
+# Include files that start with underscore or dot
+include:
+  - .htaccess
+
+# Disable Jekyll processing for static HTML sites
+markdown: kramdown
+highlighter: rouge
+
+# GitHub Pages settings
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+
+# Site settings
+title: "Gong Lab"
+description: "Cell Polarity and Cell Biology Research Lab"
+baseurl: ""
+url: "https://gonglabucsf.com"
