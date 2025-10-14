@@ -76,7 +76,7 @@ const searchData = [
     {
         id: 'contact-main',
         title: 'Contact Information',
-        content: 'Bo Gong, Ph.D. Assistant Professor, Department of Cell and Tissue Biology, University of California San Francisco, 513 Parnassus Ave, HSW 612, San Francisco, CA 94143. Email: bo.gong@ucsf.com',
+        content: 'Bo Gong, Ph.D. Assistant Professor, Department of Cell and Tissue Biology, University of California San Francisco, 513 Parnassus Ave, HSW 612, San Francisco, CA 94143. Email: bo.gong@ucsf.edu',
         keywords: ['contact', 'email', 'address', 'location', 'bo gong', 'ucsf', 'parnassus', 'san francisco'],
         page: 'Contact',
         url: 'contact.html',
